@@ -75,12 +75,10 @@ namespace DevFreela.Payments.API.Consumers
 
         public void ProcessPayment(PaymentInfoInputModel paymentInfo)
         {
-            using (var scope = _serviceProvider.CreateScope())
-            {
-                var paymentService = scope.ServiceProvider.GetRequiredService<IPaymentService>();
+            using var scope = _serviceProvider.CreateScope();
+            var paymentService = scope.ServiceProvider.GetRequiredService<IPaymentService>();
 
-                paymentService.Process(paymentInfo);
-            }
+            paymentService.Process(paymentInfo);
         }
     }
 }

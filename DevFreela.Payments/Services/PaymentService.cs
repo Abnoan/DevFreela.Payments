@@ -1,5 +1,4 @@
 ﻿using DevFreela.Payments.API.Models;
-using System.Threading.Tasks;
 
 namespace DevFreela.Payments.API.Services
 {
